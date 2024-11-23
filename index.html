@@ -19,16 +19,16 @@
             width: 100%;
             color: white;
             display: flex;
-            justify-content: space-between; /* Organiza o conteúdo em duas extremidades */
+            justify-content: space-between;
             align-items: center;
             padding: 20px;
             background-color: #555;
-            box-sizing: border-box;  /* Garante que o padding não quebre o layout */
+            box-sizing: border-box;
         }
 
         .header-left h1 {
-            font-family: 'Great Vibes', cursive;  /* Aplica a fonte apenas no nome Pedro Souza */
-            font-size: 30px; /* Tamanho do texto menor */
+            font-family: 'Great Vibes', cursive;
+            font-size: 30px;
             margin: 0;
         }
 
@@ -67,9 +67,9 @@
         }
 
         .header-image {
-            width: 100%;  /* A imagem vai cobrir a largura da tela */
-            height: 300px;  /* Ajuste a altura da imagem conforme necessário */
-            object-fit: cover;  /* Faz a imagem cobrir o espaço sem distorcer */
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
             display: block;
         }
 
@@ -79,20 +79,32 @@
             margin: 0 auto;
         }
 
-        /* Estilo para os headers */
-        h2 {
+        .section {
+            margin-bottom: 4rem; /* Adiciona espaçamento entre as seções */
+        }
+
+        .section h2 {
             text-align: center;
-            font-weight: bold;  /* Aplica o negrito */
-            font-size: 2rem; /* Tamanho maior que o dos parágrafos */
-            margin-bottom: 1rem;
+            font-size: 36px;
+            font-weight: bold;
         }
 
-        /* Outras seções */
-        section p {
-            font-size: 1.2rem;
-            line-height: 1.6;
+        .section p {
+            font-size: 18px;
+            text-align: center;
         }
 
+        /* Foto circular acima de About me */
+        .profile-photo {
+            display: block;
+            margin: 0 auto 2rem auto; /* Centraliza a foto e adiciona margem abaixo */
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Slider de imagens */
         .slider {
             position: relative;
             max-width: 100%;
@@ -177,23 +189,23 @@
 
         .footer-content {
             display: flex;
-            justify-content: space-between;  /* Espaça os itens entre a esquerda e direita */
-            align-items: center;  /* Alinha os itens verticalmente */
+            justify-content: space-between;
+            align-items: center;
         }
 
         .footer-links {
             display: flex;
-            align-items: center;  /* Alinha as imagens verticalmente */
+            align-items: center;
         }
 
         .footer-icon {
-            width: 40px;  /* Tamanho da imagem (ajuste conforme necessário) */
-            margin: 0 10px;  /* Espaçamento entre as imagens */
+            width: 40px;
+            margin: 0 10px;
             transition: transform 0.3s ease;
         }
 
         .footer-icon:hover {
-            transform: scale(1.2);  /* Efeito de zoom ao passar o mouse */
+            transform: scale(1.2);
         }
     </style>
 </head>
@@ -210,7 +222,7 @@
         </nav>
 
         <div class="header-right">
-            <a href="Images_Pdfs/CV_PedroSouza.pdf" download>Download CV</a>
+            <a href="CV_Pedro_Souza.pdf" download>Download CV</a>
         </div>
     </header>
 
@@ -218,13 +230,25 @@
     <img src="Images/img3.png" alt="Header Image" class="header-image">
 
     <div class="content">
-        <section id="about">
-            <h2><b>About Me</b></h2>
+        <!-- Foto circular acima da seção About Me -->
+        <img src="Images/pedro_photo.jpg" alt="Pedro Souza" class="profile-photo">
+
+        <section id="about" class="section">
+            <h2>About Me</h2>
             <p>I am a 3D artist passionate about creating games since I was a child. That is why I am pursuing a bachelor's degree in Game Development.</p>
-        </section>     
+        </section>
+
+        <section id="portfolio" class="section">
+            <h2>Portfolio</h2>
+            <ul>
+                <li><strong>Mobile Game:</strong> [Brief description of the game with a link]</li>
+                <li><strong>3D Modeling:</strong> [Link to projects or images]</li>
+                <li><strong>Game Jam:</strong> [Description of a standout project]</li>
+            </ul>
+        </section>
+
         <!-- Slider de imagens -->
-        <section id="portfolio">
-        <h2><b>Portfolio</b></h2>
+        <h2>Portfolio</h2>
         <div class="slider">
             <div class="slides">
                 <div class="slide">
@@ -248,11 +272,10 @@
                 <button id="next">Next</button>
             </div>
         </div>
-    </section>
 
         <!-- Let's Talk Section -->
         <section id="contact" class="contact-section">
-            <h2><b>Let's Talk!</b></h2>
+            <h2>Let's Talk!</h2>
             <p>Want to enter in contact to build your project? Contact me!</p>
             <a href="mailto:pedrohsouza33@gmail.com?subject=Project Inquiry&body=Hi Pedro, I would like to discuss a project with you." 
                class="contact-button">Contact</a>
@@ -276,25 +299,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        let currentSlide = 0;
-        const totalSlides = document.querySelectorAll('.slide').length;
-
-        document.getElementById('next').addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateSlidePosition();
-        });
-
-        document.getElementById('prev').addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateSlidePosition();
-        });
-
-        function updateSlidePosition() {
-            const slidesContainer = document.querySelector('.slides');
-            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-    </script>
 </body>
 </html>
