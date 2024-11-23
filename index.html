@@ -1,148 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles/style.css">
     <title>Pedro Souza</title>
+    <!-- Link para importar a fonte Great Vibes -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Baskerville;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+        }
+        .header-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 20px;
+        }
+        .content {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .slider {
+            position: relative;
+            max-width: 100%;
+            margin: 2rem auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .slide img {
+            width: 100%;
+            display: block;
+            border-radius: 10px;
+        }
+        .slider-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .slider-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .slider-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .contact-section {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 2rem;
+            background-color: #e8f5e9;
+            border-radius: 10px;
+        }
+        .contact-section p {
+            font-size: 1.2rem;
+        }
+        .contact-button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.7rem 1.5rem;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .contact-button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;  /* Espaça os itens entre a esquerda e direita */
+            align-items: center;  /* Alinha os itens verticalmente */
+        }
+        .footer-links {
+            display: flex;
+            align-items: center;  /* Alinha as imagens verticalmente */
+        }
+        .footer-icon {
+            width: 40px;  /* Tamanho da imagem (ajuste conforme necessário) */
+            margin: 0 10px;  /* Espaçamento entre as imagens */
+            transition: transform 0.3s ease;
+        }
+        .footer-icon:hover {
+            transform: scale(1.2);  /* Efeito de zoom ao passar o mouse */
+        }
+    </style>
 </head>
-
 <body>
-    <nav class="fixed-top bg-dark">
-        <div class="container">
-            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
-                <div class="col-md-3 mb-2 mb-md-0">
-                    <a href="/" class="d-inline-flex text-decoration-none font-cursive text-white">
-                        Pedro Souza
-                    </a>
-                </div>
+    <header>
+        <h1>Pedro Souza</h1>
+    </header>
 
-                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#jumbotron" class="nav-link px-2">Home</a></li>
-                    <li><a href="#about" class="nav-link px-2">About Me</a></li>
-                    <li><a href="#portfolio" class="nav-link px-2">Portfolio</a></li>
-                    <li><a href="#contact" class="nav-link px-2">Contacts</a></li>
-                </ul>
+    <!-- Imagem de Cabeçalho -->
+    <img src="Images/header-image.jpg" alt="Header Image" class="header-image">
 
-                <div class="col-md-3 text-end">
-                    <a href="./public/resume/J-Coma CV - EnPt.pdf" download class="btn btn-outline-light" role="button">
-                        My CV <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-download" viewBox="0 0 16 16">
-                            <path
-                                d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
-                            <path
-                                d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
-                        </svg>
-                    </a>
+    <div class="content">
+        <h2><b>About Me</b></h2>
+        <p>I am a 3D artist passionate about creating games since I was a child. That is why I am pursuing a bachelor's degree in Game Development.</p>
+
+        <h2><b>Projects</b></h2>
+        <ul>
+            <li><strong>Mobile Game:</strong> [Brief description of the game with a link]</li>
+            <li><strong>3D Modeling:</strong> [Link to projects or images]</li>
+            <li><strong>Game Jam:</strong> [Description of a standout project]</li>
+        </ul>
+
+        <!-- Slider de imagens -->
+        <h2><b>Portfolio</b></h2>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">
+                    <img src="Images/img1.png" alt="Project 1">
                 </div>
-            </header>
+                <div class="slide">
+                    <img src="Images/img2.png" alt="Project 2">
+                </div>
+                <div class="slide">
+                    <img src="Images/img3.png" alt="Project 3">
+                </div>
+                <div class="slide">
+                    <img src="Images/img4.png" alt="Project 4">
+                </div>
+                <div class="slide">
+                    <img src="Images/img5.png" alt="Project 5">
+                </div>
+            </div>
+            <div class="slider-buttons">
+                <button id="prev">Previous</button>
+                <button id="next">Next</button>
+            </div>
         </div>
-    </nav>
 
-    <main class="padding-navbar">
-        <section id="jumbotron">
-            <div class="p-5 text-center bg-image jumbotron-img">
-                <div class="container py-5 text-white">
-                    <h1 class="title">Pedro Souza</h1>
-                    <p class="col-lg-8 mx-auto lead">
-                        Game Developer / 3D Artist 
-                    </p>
-                </div>
+        <!-- Let's Talk Section -->
+        <div class="contact-section">
+            <h2><b>Let's Talk!</b></h2>
+            <p>Want to enter in contact to build your project? Contact me!</p>
+            <a href="mailto:pedrohsouza33@gmail.com?subject=Project Inquiry&body=Hi Pedro, I would like to discuss a project with you." 
+               class="contact-button">Contact</a>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <p>© Pedro Souza. All Rights Reserved</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/pedrohsouza" target="_blank">
+                    <img src="Images/linkedin-icon.png" alt="LinkedIn" class="footer-icon">
+                </a>
+                <a href="https://www.artstation.com/pedrohsouza" target="_blank">
+                    <img src="Images/artstation-icon.png" alt="ArtStation" class="footer-icon">
+                </a>
+                <a href="https://github.com/pedrohsouza" target="_blank">
+                    <img src="Images/github-icon.png" alt="GitHub" class="footer-icon">
+                </a>
             </div>
-        </section>
+        </div>
+    </footer>
 
-        <section id="about">
-            <div class="container">
-                <div class="px-4 py-5 my-5 text-center">
-                    <img class="d-block mx-auto mb-4" src="./assets/images/CV.png" alt="joão profile image" width="200">
-                    <h2 class="display-5 fw-bold text-body-emphasis mb-3">About me!</h2>
-                    <div class="col-lg-6 mx-auto">
-                        <p class="lead mb-4">My name is Pedro Souza, I'm a 3D artist with 2 years of experience in 3D softwares such as 3DsMax and Blender especialized in low/high-poly assets for the game industry.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <script>
+        const slides = document.querySelector('.slides');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let currentIndex = 0;
 
-        <section id="portfolio" class="bg-body-secondary">
-            <div class="container pb-5">
-                <hr>
-                <div class="px-4 py-5 text-center">
-                    <h2 class="display-5 fw-bold text-body-emphasis mb-3">Portfolio</h2>
-                </div>
-                <div id="carouselExampleCaptions" class="carousel slide px-lg-5 mx-lg-5">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
-                            class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-gradient"></div>
-                        <div class="carousel-item active">
-                            <img src="Images/img1.png" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5><a class="link-underline link-underline-opacity-0"
-                                        href="https://www.artstation.com/artwork/Ny61lD" target=”_blank”>Nash-Healey
-                                        Roadster</a>
-                                </h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="./assets/images/MagnoCapite.png" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5><a class="link-underline link-underline-opacity-0"
-                                        href="https://www.artstation.com/artwork/lD8EGz" target=”_blank”>Magno
-                                        Capite</a></h5>
-                                <p>3D models developed for the unreleased game Magno Capite.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item carousel-item-embed">
-                            <iframe class="embed" src="https://www.youtube.com/embed/82LKS2F6I98?si=-C9VvPwbYOFrAiBq"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5><a class="link-underline link-underline-opacity-0"
-                                        href="https://lostbaconstudios.itch.io/faxed" target=”_blank”>FAXED</a></h5>
-                                <p>3D and 2D art made for the game FAXED.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-        </section>
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? slides.children.length - 1 : currentIndex - 1;
+            updateSlider();
+        });
 
-        <section id="contact">
-            <div class="container">
-                <hr class="m-0">
-                <div class="px-4 py-5 text-center">
-                    <h2 class="display-5 fw-bold text-body-emphasis mb-4">Let's Talk!</h2>
-                    <h4>Got any projects you'd like to turn real?</h4>
-                    <h4> Get in contact with me!</h4>
-                    <a href="mailto:pedrohsouza33@gmail.com" class="btn btn-dark mt-4 contact-button" role="button">Contact
-                        Me</a>
-                </div>
-            </div>
-        </section>
-    </main>
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === slides.children.length - 1) ? 0 : currentIndex + 1;
+            updateSlider();
+        });
 
-    <footer class="bg-dark fixed-bottom">
-        <div class="container">
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-5">
-                <div class="col-md-4 d-flex align-items-center">
-                    <span class="mb-3 mb-md-0 text-light">© Pedro Souza
+        function updateSlider() {
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    </script>
+</body>
+</html>
