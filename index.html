@@ -22,6 +22,12 @@
             font-family: 'Great Vibes', cursive;
             font-size: 3rem;
         }
+        .header-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 20px;
+        }
         .content {
             padding: 2rem;
             max-width: 800px;
@@ -93,11 +99,26 @@
             background-color: #45a049;
         }
         footer {
-            text-align: center;
-            margin-top: 2rem;
-            padding: 1rem;
             background: #333;
             color: #fff;
+            padding: 1rem;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;  /* Espaça os itens entre a esquerda e direita */
+            align-items: center;  /* Alinha os itens verticalmente */
+        }
+        .footer-links {
+            display: flex;
+            align-items: center;  /* Alinha as imagens verticalmente */
+        }
+        .footer-icon {
+            width: 40px;  /* Tamanho da imagem (ajuste conforme necessário) */
+            margin: 0 10px;  /* Espaçamento entre as imagens */
+            transition: transform 0.3s ease;
+        }
+        .footer-icon:hover {
+            transform: scale(1.2);  /* Efeito de zoom ao passar o mouse */
         }
     </style>
 </head>
@@ -105,6 +126,10 @@
     <header>
         <h1>Pedro Souza</h1>
     </header>
+
+    <!-- Imagem de Cabeçalho -->
+    <img src="Images/header-image.jpg" alt="Header Image" class="header-image">
+
     <div class="content">
         <h2><b>About Me</b></h2>
         <p>I am a 3D artist passionate about creating games since I was a child. That is why I am pursuing a bachelor's degree in Game Development.</p>
@@ -124,16 +149,16 @@
                     <img src="Images/img1.png" alt="Project 1">
                 </div>
                 <div class="slide">
-                    <img src="Images/img2.png" alt="Project 1">
+                    <img src="Images/img2.png" alt="Project 2">
                 </div>
                 <div class="slide">
-                    <img src="Images/img3.png" alt="Project 1">
+                    <img src="Images/img3.png" alt="Project 3">
                 </div>
                 <div class="slide">
-                    <img src="Images/img4.png" alt="Project 1">
+                    <img src="Images/img4.png" alt="Project 4">
                 </div>
                 <div class="slide">
-                    <img src="Images/img5.png" alt="Project 1">
+                    <img src="Images/img5.png" alt="Project 5">
                 </div>
             </div>
             <div class="slider-buttons">
@@ -150,8 +175,23 @@
                class="contact-button">Contact</a>
         </div>
     </div>
+
+    <!-- Rodapé -->
     <footer>
-        <p>© Pedro Souza. All Rights Reserved</p>
+        <div class="footer-content">
+            <p>© Pedro Souza. All Rights Reserved</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/pedrohsouza" target="_blank">
+                    <img src="Images/linkedin-icon.png" alt="LinkedIn" class="footer-icon">
+                </a>
+                <a href="https://www.artstation.com/pedrohsouza" target="_blank">
+                    <img src="Images/artstation-icon.png" alt="ArtStation" class="footer-icon">
+                </a>
+                <a href="https://github.com/pedrohsouza" target="_blank">
+                    <img src="Images/github-icon.png" alt="GitHub" class="footer-icon">
+                </a>
+            </div>
+        </div>
     </footer>
 
     <script>
