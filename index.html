@@ -21,12 +21,13 @@
             display: flex;
             justify-content: space-between; /* Organiza o conteúdo em duas extremidades */
             align-items: center;
-            font-family: 'Great Vibes', cursive;
             padding: 20px;
             background-color: #333;
+            box-sizing: border-box;  /* Garante que o padding não quebre o layout */
         }
 
         .header-left h1 {
+            font-family: 'Great Vibes', cursive;  /* Aplica a fonte apenas no nome Pedro Souza */
             font-size: 30px; /* Tamanho do texto menor */
             margin: 0;
         }
@@ -257,43 +258,12 @@
         <div class="footer-content">
             <p>© Pedro Souza. All Rights Reserved</p>
             <div class="footer-links">
-                <a href="https://www.linkedin.com/in/pedrohsouza" target="_blank">
-                    <img src="Images/linkedin-icon.png" alt="LinkedIn" class="footer-icon">
+                <a href="https://www.linkedin.com/in/pedrohfreitassouza/" target="_blank">
+                    <img src="Images/LinkedinSVG.svg" alt="LinkedIn" class="footer-icon">
+                    <span>LinkedIn</span>
                 </a>
-                <a href="https://www.artstation.com/pedrohsouza" target="_blank">
-                    <img src="Images/artstation-icon.png" alt="ArtStation" class="footer-icon">
+                <a href="https://www.artstation.com/pedrohenrique4382" target="_blank">
+                    <img src="Images/ArtstationSVG.webp" alt="ArtStation" class="footer-icon">
+                    <span>ArtStation</span>
                 </a>
-                <a href="https://github.com/pedrohsouza" target="_blank">
-                    <img src="Images/github-icon.png" alt="GitHub" class="footer-icon">
-                </a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const slides = document.querySelector('.slides');
-        const prevButton = document.getElementById('prev');
-        const nextButton = document.getElementById('next');
-        let index = 0;
-
-        prevButton.addEventListener('click', () => {
-            if (index > 0) {
-                index--;
-                updateSlide();
-            }
-        });
-
-        nextButton.addEventListener('click', () => {
-            if (index < slides.children.length - 1) {
-                index++;
-                updateSlide();
-            }
-        });
-
-        function updateSlide() {
-            const slideWidth = slides.children[0].offsetWidth;
-            slides.style.transform = `translateX(-${slideWidth * index}px)`;
-        }
-    </script>
-</body>
-</html>
+                <a href="https://github.com/pedrohsouza33" target="_blank
