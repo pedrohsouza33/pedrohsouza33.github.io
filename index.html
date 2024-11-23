@@ -23,8 +23,9 @@
             font-size: 3rem;
         }
         .header-image {
-            width: 100%;
-            height: auto;
+            width: 100%;  /* A imagem vai cobrir a largura da tela */
+            height: 300px;  /* Defina a altura da imagem para algo menor, como 300px */
+            object-fit: cover;  /* Faz a imagem cobrir o espaço sem distorcer */
             display: block;
             margin-top: 20px;
         }
