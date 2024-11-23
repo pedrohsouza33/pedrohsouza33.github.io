@@ -263,7 +263,6 @@
                 </a>
                 <a href="https://www.artstation.com/pedrohenrique4382" target="_blank">
                     <img src="Images/ArtstationSVG.webp" alt="ArtStation" class="footer-icon">
-
                 </a>
                 <a href="https://github.com/pedrohsouza33" target="_blank">
                     <img src="Images/GitSVG.png" alt="GitHub" class="footer-icon">
@@ -273,4 +272,24 @@
     </footer>
 
     <script>
-        // Código JavaScript para controle
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('next').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlidePosition();
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlidePosition();
+        });
+
+        function updateSlidePosition() {
+            const slidesContainer = document.querySelector('.slides');
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+    </script>
+</body>
+</html>
