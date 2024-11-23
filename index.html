@@ -17,23 +17,25 @@
         header {
             background-color: #333;
             width: 100%;
-            height: 80px;
+            height: 200px;  /* Aumentando a altura do header */
             color: white;
-            padding: 0;  /* Remover o padding */
+            padding: 0;  /* Removendo o padding */
             text-align: center;
             font-family: 'Great Vibes', cursive;
             font-size: 3rem;
             display: flex;
             flex-direction: column;
-            justify-content: center;  /* Centraliza o conteúdo verticalmente */
-            align-items: center;  /* Centraliza o conteúdo horizontalmente */
+            justify-content: center;  /* Centraliza o texto verticalmente */
+            align-items: center;  /* Centraliza o texto horizontalmente */
+            position: relative;  /* Permite que a imagem seja posicionada abaixo do texto */
         }
         .header-image {
             width: 100%;  /* A imagem vai cobrir a largura da tela */
-            height: 200px;  /* Defina a altura da imagem */
+            height: 300px;  /* Ajuste a altura da imagem para combinar com o header */
             object-fit: cover;  /* Faz a imagem cobrir o espaço sem distorcer */
-            display: block;
-            margin: 0;  /* Remove qualquer margem */
+            position: absolute;  /* Posiciona a imagem no fundo */
+            top: 0;
+            left: 0;
         }
         .content {
             padding: 2rem;
@@ -133,10 +135,9 @@
     <header>
         <h1>Pedro Souza</h1>
         <p>Game Developer / 3D Artist</p>
+        <!-- Imagem de Cabeçalho -->
+        <img src="Images/img3.png" alt="Header Image" class="header-image">
     </header>
-
-    <!-- Imagem de Cabeçalho -->
-    <img src="Images/img3.png" alt="Header Image" class="header-image">
 
     <div class="content">
         <h2><b>About Me</b></h2>
@@ -149,7 +150,6 @@
             <li><strong>Game Jam:</strong> [Description of a standout project]</li>
         </ul>
 
-        <!-- Slider de imagens -->
         <h2><b>Portfolio</b></h2>
         <div class="slider">
             <div class="slides">
@@ -175,7 +175,6 @@
             </div>
         </div>
 
-        <!-- Let's Talk Section -->
         <div class="contact-section">
             <h2><b>Let's Talk!</b></h2>
             <p>Want to enter in contact to build your project? Contact me!</p>
@@ -184,7 +183,6 @@
         </div>
     </div>
 
-    <!-- Rodapé -->
     <footer>
         <div class="footer-content">
             <p>© Pedro Souza. All Rights Reserved</p>
