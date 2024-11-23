@@ -79,6 +79,20 @@
             margin: 0 auto;
         }
 
+        /* Estilo para os headers */
+        h2 {
+            text-align: center;
+            font-weight: bold;  /* Aplica o negrito */
+            font-size: 2rem; /* Tamanho maior que o dos parágrafos */
+            margin-bottom: 1rem;
+        }
+
+        /* Outras seções */
+        section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
         .slider {
             position: relative;
             max-width: 100%;
@@ -261,11 +275,8 @@
                 <a href="https://www.linkedin.com/in/pedrohfreitassouza/" target="_blank">
                     <img src="Images/LinkedinSVG.svg" alt="LinkedIn" class="footer-icon">
                 </a>
-                <a href="https://www.artstation.com/pedrohenrique4382" target="_blank">
-                    <img src="Images/ArtstationSVG.webp" alt="ArtStation" class="footer-icon">
-                </a>
-                <a href="https://github.com/pedrohsouza33" target="_blank">
-                    <img src="Images/GitSVG.png" alt="GitHub" class="footer-icon">
+                <a href="https://www.behance.net/pedrohsouza" target="_blank">
+                    <img src="Images/BehanceSVG.svg" alt="Behance" class="footer-icon">
                 </a>
             </div>
         </div>
@@ -273,9 +284,8 @@
 
     <script>
         let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-        
+        const totalSlides = document.querySelectorAll('.slide').length;
+
         document.getElementById('next').addEventListener('click', () => {
             currentSlide = (currentSlide + 1) % totalSlides;
             updateSlidePosition();
