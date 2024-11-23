@@ -14,34 +14,35 @@
             background-color: #f4f4f9;
             color: #333;
         }
+
         header {
-            background-color: #333;
             width: 100%;
-            height: 200px;  /* Aumentando a altura do header */
             color: white;
-            padding: 0;  /* Removendo o padding */
             text-align: center;
             font-family: 'Great Vibes', cursive;
-            font-size: 3rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;  /* Centraliza o texto verticalmente */
-            align-items: center;  /* Centraliza o texto horizontalmente */
-            position: relative;  /* Permite que a imagem seja posicionada abaixo do texto */
+            font-size: 40px;  /* Ajuste o tamanho do texto para 40px */
+            padding: 20px 0;
+            background-color: #333;  /* Fundo escuro para o texto se destacar */
         }
+
+        header h1,
+        header p {
+            margin: 0;  /* Remove margens para um layout mais limpo */
+        }
+
         .header-image {
             width: 100%;  /* A imagem vai cobrir a largura da tela */
-            height: 300px;  /* Ajuste a altura da imagem para combinar com o header */
+            height: 300px;  /* Ajuste a altura da imagem conforme necessário */
             object-fit: cover;  /* Faz a imagem cobrir o espaço sem distorcer */
-            position: absolute;  /* Posiciona a imagem no fundo */
-            top: 0;
-            left: 0;
+            display: block;
         }
+
         .content {
             padding: 2rem;
             max-width: 800px;
             margin: 0 auto;
         }
+
         .slider {
             position: relative;
             max-width: 100%;
@@ -49,19 +50,23 @@
             overflow: hidden;
             border-radius: 10px;
         }
+
         .slides {
             display: flex;
             transition: transform 0.5s ease-in-out;
         }
+
         .slide {
             min-width: 100%;
             box-sizing: border-box;
         }
+
         .slide img {
             width: 100%;
             display: block;
             border-radius: 10px;
         }
+
         .slider-buttons {
             position: absolute;
             top: 50%;
@@ -70,6 +75,7 @@
             justify-content: space-between;
             transform: translateY(-50%);
         }
+
         .slider-buttons button {
             background-color: rgba(0, 0, 0, 0.5);
             color: white;
@@ -79,9 +85,11 @@
             border-radius: 5px;
             font-size: 1rem;
         }
+
         .slider-buttons button:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
+
         .contact-section {
             text-align: center;
             margin-top: 2rem;
@@ -89,9 +97,11 @@
             background-color: #e8f5e9;
             border-radius: 10px;
         }
+
         .contact-section p {
             font-size: 1.2rem;
         }
+
         .contact-button {
             display: inline-block;
             margin-top: 1rem;
@@ -104,28 +114,34 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
+
         .contact-button:hover {
             background-color: #45a049;
         }
+
         footer {
             background: #333;
             color: #fff;
             padding: 1rem;
         }
+
         .footer-content {
             display: flex;
             justify-content: space-between;  /* Espaça os itens entre a esquerda e direita */
             align-items: center;  /* Alinha os itens verticalmente */
         }
+
         .footer-links {
             display: flex;
             align-items: center;  /* Alinha as imagens verticalmente */
         }
+
         .footer-icon {
             width: 40px;  /* Tamanho da imagem (ajuste conforme necessário) */
             margin: 0 10px;  /* Espaçamento entre as imagens */
             transition: transform 0.3s ease;
         }
+
         .footer-icon:hover {
             transform: scale(1.2);  /* Efeito de zoom ao passar o mouse */
         }
@@ -135,9 +151,10 @@
     <header>
         <h1>Pedro Souza</h1>
         <p>Game Developer / 3D Artist</p>
-        <!-- Imagem de Cabeçalho -->
-        <img src="Images/img3.png" alt="Header Image" class="header-image">
     </header>
+
+    <!-- Imagem do Header -->
+    <img src="Images/img3.png" alt="Header Image" class="header-image">
 
     <div class="content">
         <h2><b>About Me</b></h2>
@@ -150,6 +167,7 @@
             <li><strong>Game Jam:</strong> [Description of a standout project]</li>
         </ul>
 
+        <!-- Slider de imagens -->
         <h2><b>Portfolio</b></h2>
         <div class="slider">
             <div class="slides">
@@ -175,6 +193,7 @@
             </div>
         </div>
 
+        <!-- Let's Talk Section -->
         <div class="contact-section">
             <h2><b>Let's Talk!</b></h2>
             <p>Want to enter in contact to build your project? Contact me!</p>
@@ -183,18 +202,19 @@
         </div>
     </div>
 
+    <!-- Rodapé -->
     <footer>
         <div class="footer-content">
             <p>© Pedro Souza. All Rights Reserved</p>
             <div class="footer-links">
-                <a href="https://www.linkedin.com/in/pedrohfreitassouza/" target="_blank">
-                    <img src="Images/LinkedinSVG.svg" alt="LinkedIn" class="footer-icon">
+                <a href="https://www.linkedin.com/in/pedrohsouza" target="_blank">
+                    <img src="Images/linkedin-icon.png" alt="LinkedIn" class="footer-icon">
                 </a>
-                <a href="https://www.artstation.com/pedrohenrique4382" target="_blank">
-                    <img src="Images/ArtstationSVG.webp" alt="ArtStation" class="footer-icon">
+                <a href="https://www.artstation.com/pedrohsouza" target="_blank">
+                    <img src="Images/artstation-icon.png" alt="ArtStation" class="footer-icon">
                 </a>
-                <a href="https://github.com/pedrohsouza33" target="_blank">
-                    <img src="Images/GitSVG.png" alt="GitHub" class="footer-icon">
+                <a href="https://github.com/pedrohsouza" target="_blank">
+                    <img src="Images/github-icon.png" alt="GitHub" class="footer-icon">
                 </a>
             </div>
         </div>
