@@ -272,4 +272,28 @@
 
     <script>
         const slides = document.querySelector('.slides');
-        const prevButton = document.getElementById('
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let index = 0;
+
+        prevButton.addEventListener('click', () => {
+            if (index > 0) {
+                index--;
+                updateSlide();
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (index < slides.children.length - 1) {
+                index++;
+                updateSlide();
+            }
+        });
+
+        function updateSlide() {
+            const slideWidth = slides.children[0].offsetWidth;
+            slides.style.transform = `translateX(-${slideWidth * index}px)`;
+        }
+    </script>
+</body>
+</html>
