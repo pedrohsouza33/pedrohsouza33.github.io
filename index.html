@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -265,6 +266,7 @@
                     <button id="prev">Previous</button>
                     <button id="next">Next</button>
                 </div>
+                
             </div>
         </section>
 
@@ -305,7 +307,7 @@
         function showNextSlide() {
             if (index < slides.children.length - 1) {
                 index++;
-                slides.style.transform = translateX(-${index * 100}%);
+                slides.style.transform = `translateX(-${index * 100}%)`;
             }
         }
 
@@ -313,7 +315,7 @@
         function showPrevSlide() {
             if (index > 0) {
                 index--;
-                slides.style.transform = translateX(-${index * 100}%);
+                slides.style.transform = `translateX(-${index * 100}%)`;
             }
         }
 
