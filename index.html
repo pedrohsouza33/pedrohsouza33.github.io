@@ -19,16 +19,16 @@
             width: 100%;
             color: white;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Organiza o conteúdo em duas extremidades */
             align-items: center;
             padding: 20px;
             background-color: #555;
-            box-sizing: border-box;
+            box-sizing: border-box;  /* Garante que o padding não quebre o layout */
         }
 
         .header-left h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 30px;
+            font-family: 'Great Vibes', cursive;  /* Aplica a fonte apenas no nome Pedro Souza */
+            font-size: 30px; /* Tamanho do texto menor */
             margin: 0;
         }
 
@@ -67,9 +67,9 @@
         }
 
         .header-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
+            width: 100%;  /* A imagem vai cobrir a largura da tela */
+            height: 300px;  /* Ajuste a altura da imagem conforme necessário */
+            object-fit: cover;  /* Faz a imagem cobrir o espaço sem distorcer */
             display: block;
         }
 
@@ -79,6 +79,7 @@
             margin: 0 auto;
         }
 
+        /* Foto circular */
         .profile-photo {
             width: 200px;
             height: 200px;
@@ -88,13 +89,15 @@
             display: block;
         }
 
+        /* Estilo para os headers */
         h2 {
             text-align: center;
-            font-weight: bold;
-            font-size: 3rem;
+            font-weight: bold;  /* Aplica o negrito */
+            font-size: 3rem; /* Tamanho maior que o dos parágrafos */
             margin-bottom: 1rem;
         }
 
+        /* Outras seções */
         section {
             margin-bottom: 3rem;
         }
@@ -188,23 +191,23 @@
 
         .footer-content {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: space-between;  /* Espaça os itens entre a esquerda e direita */
+            align-items: center;  /* Alinha os itens verticalmente */
         }
 
         .footer-links {
             display: flex;
-            align-items: center;
+            align-items: center;  /* Alinha as imagens verticalmente */
         }
 
         .footer-icon {
-            width: 40px;
-            margin: 0 10px;
+            width: 40px;  /* Tamanho da imagem (ajuste conforme necessário) */
+            margin: 0 10px;  /* Espaçamento entre as imagens */
             transition: transform 0.3s ease;
         }
 
         .footer-icon:hover {
-            transform: scale(1.2);
+            transform: scale(1.2);  /* Efeito de zoom ao passar o mouse */
         }
     </style>
 </head>
@@ -213,24 +216,33 @@
         <div class="header-left">
             <h1>Pedro Souza</h1>
         </div>
+        
         <nav>
             <a href="#about">About Me</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#contact">Let's Talk!</a>
         </nav>
+
         <div class="header-right">
             <a href="Images_Pdfs/CV_PedroSouza.pdf" download>Download CV</a>
         </div>
     </header>
+
+    <!-- Imagem do Header -->
     <img src="Images_Pdfs/img3.png" alt="Header Image" class="header-image">
+
     <div class="content">
+        <!-- Foto do Perfil -->
         <img src="Images_Pdfs/PedroPerfil.jpg" alt="Pedro Souza" class="profile-photo">
+
         <section id="about">
-            <h2>About Me</h2>
+            <h2><b>About Me</b></h2>
             <p>I am a 3D artist with 2+ years of experience passionate about creating games since I was a child. That is why I am pursuing a bachelor's degree in Game Development.</p>
-        </section>
+        </section>     
+
+        <!-- Slider de imagens -->
         <section id="portfolio">
-            <h2>Portfolio</h2>
+            <h2><b>Portfolio</b></h2>
             <div class="slider">
                 <div class="slides">
                     <div class="slide">
@@ -242,6 +254,12 @@
                     <div class="slide">
                         <img src="Images_Pdfs/img3.png" alt="Project 3">
                     </div>
+                    <div class="slide">
+                        <img src="Images_Pdfs/img4.png" alt="Project 4">
+                    </div>
+                    <div class="slide">
+                        <img src="Images_Pdfs/img5.png" alt="Project 5">
+                    </div>
                 </div>
                 <div class="slider-buttons">
                     <button id="prev">Previous</button>
@@ -249,12 +267,17 @@
                 </div>
             </div>
         </section>
+
+        <!-- Let's Talk Section -->
         <section id="contact" class="contact-section">
-            <h2>Let's Talk!</h2>
+            <h2><b>Let's Talk!</b></h2>
             <p>Want to enter in contact to build your project? Contact me!</p>
-            <a href="mailto:pedrohsouza33@gmail.com?subject=Project Inquiry&body=Hi Pedro, I would like to discuss a project with you." class="contact-button">Contact</a>
+            <a href="mailto:pedrohsouza33@gmail.com?subject=Project Inquiry&body=Hi Pedro, I would like to discuss a project with you." 
+               class="contact-button">Contact</a>
         </section>
     </div>
+
+    <!-- Rodapé -->
     <footer>
         <div class="footer-content">
             <p>© Pedro Souza. All Rights Reserved</p>
@@ -271,26 +294,30 @@
             </div>
         </div>
     </footer>
+
     <script>
         const prevButton = document.getElementById('prev');
         const nextButton = document.getElementById('next');
         const slides = document.querySelector('.slides');
         let index = 0;
 
+        // Função para mostrar a próxima imagem
         function showNextSlide() {
             if (index < slides.children.length - 1) {
                 index++;
-                slides.style.transform = `translateX(-${index * 100}%)`;
+                slides.style.transform = translateX(-${index * 100}%);
             }
         }
 
+        // Função para mostrar a imagem anterior
         function showPrevSlide() {
             if (index > 0) {
                 index--;
-                slides.style.transform = `translateX(-${index * 100}%)`;
+                slides.style.transform = translateX(-${index * 100}%);
             }
         }
 
+        // Configuração dos botões
         nextButton.addEventListener('click', showNextSlide);
         prevButton.addEventListener('click', showPrevSlide);
     </script>
